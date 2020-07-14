@@ -24,7 +24,16 @@ class MainActivity : AppCompatActivity() {
 
 
         }
+        sign.setOnClickListener()
+        {
+            doSign()
+        }
 
+    }
+
+    fun doSign()
+    {
+        startActivity(Intent(this,Register_user::class.java))
     }
     fun doLogin()
     {
@@ -42,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         }
         if(Password.text.toString().isEmpty())
         {
-            Password.error ="Please enter the Email"
+            Password.error ="Please enter the Password"
             Password.requestFocus()
             return
         }
