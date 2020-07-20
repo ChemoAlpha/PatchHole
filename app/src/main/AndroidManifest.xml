@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Register_user"></activity>
-        <activity android:name=".DashBoard_user" />
+
+        <activity android:name=".Register_user" />
+        <activity android:name=".DashBoard_user"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

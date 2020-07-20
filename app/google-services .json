@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "698886185210",
+    "firebase_url": "https://patch-b2636.firebaseio.com",
+    "project_id": "patch-b2636",
+    "storage_bucket": "patch-b2636.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:698886185210:android:7038a8206295d2060a2943",
+        "android_client_info": {
+          "package_name": "com.example.patchhole"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "698886185210-0iqhjnu506msj5l9eotq9vocd30jbgtt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByecFt5HbwNKUyOyUdwMld_TEpAohQKNo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "698886185210-0iqhjnu506msj5l9eotq9vocd30jbgtt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

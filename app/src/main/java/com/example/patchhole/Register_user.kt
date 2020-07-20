@@ -60,42 +60,45 @@ class Register_user : AppCompatActivity() {
             passwordReg.requestFocus()
             return
         }
-
-        if(phonereg.text.toString().isEmpty())
-        {
-            phonereg.error ="Please enter the Phone number"
-            phonereg.requestFocus()
-            return
-        }
         progressBar.visibility = View.VISIBLE
         var email=EmailReg.text.toString()
         var password=passwordReg.text.toString()
         var full_name=Name.text.toString()
-        var phone=phonereg.text.toString()
-        val db = FirebaseFirestore.getInstance().document("User/list")
+
+        val db = FirebaseFirestore.getInstance().document("User/"+ email)
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful)
                 {
-                    Toast.makeText(this,"user created",Toast.LENGTH_SHORT).show()
+
                     try {
                         val list1 =HashMap<String, Any>()
                         list1.put("name",full_name)
                         list1.put("email",email)
                         list1.put("password",password)
-                        list1.put("phone",phone)
+
                         db.set(list1).addOnSuccessListener {
-                            void: Void? ->Toast.makeText(this,"suessfully registerd",Toast.LENGTH_SHORT).show()
+                                void: Void? ->Toast.makeText(this,"suessfully registerd",Toast.LENGTH_SHORT).show()
                             startActivity(Intent(this,DashBoard_user::class.java))
+                            val intent=Intent(this,DashBoard_user::class.java)
+                            intent.putExtra("email",email)
+                            startActivity(intent)
+                            finish()
 
                         }
 
-                        }catch(e:Exception)
+                    }catch(e:Exception)
                     {
                         Toast.makeText(this,e.toString(),Toast.LENGTH_SHORT).show()
                     }
-                    }
                 }
+            }
+
+
+
+
+
+
 
 
 

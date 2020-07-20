@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+        <item
+            android:id="@+id/nav_map"
+            android:icon="@drawable/ic_map"
+            android:title="Map"/>
+        <item
+            android:id="@+id/nav_invite"
+            android:icon="@drawable/ic_invite"
+            android:title="Invite a Friend"/>
+        <item
+            android:id="@+id/nav_myreport"
+            android:icon="@drawable/ic_myreport"
+            android:title="My Report"/>
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/ic_friends"
+            android:title="About"/>
+    </group>
+
+
+    <item android:title="Account Settings">
+        <menu>
+
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_signout"
+                android:title="Sign Out"/>
+        </menu>
+    </item>
+</menu>

@@ -89,12 +89,15 @@ class MainActivity : AppCompatActivity() {
     {
     if(currentUser !=null)
     {
-        startActivity(Intent(this,DashBoard_user::class.java))
+        val intent = Intent(this, DashBoard_user::class.java)
+        intent.putExtra("email",Email.text.toString())
+        startActivity(intent)
+
     }
         else
     {
-        Toast.makeText(baseContext, "Authentication failed.",
-            Toast.LENGTH_SHORT).show()
+
+
     }
     }
     private var doubleBackToExitPressedOnce = false

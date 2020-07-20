@@ -1,27 +1,116 @@
 package com.example.patchhole
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.widget.Toolbar
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.internal.FirebaseAppHelper
+import com.google.firebase.firestore.FirebaseFirestore
+import android.widget.TextView as TextView
 
-class DashBoard_user : AppCompatActivity()
+
+class DashBoard_user : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener
 
 {
+
+    lateinit var toolbar: Toolbar
+    lateinit var drawerLayout: DrawerLayout
+    lateinit var navView: NavigationView
     private lateinit var auth: FirebaseAuth
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?)
+    {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_dash_board_user)
+        setContentView(R.layout.activity_dash_board)
 
         auth = FirebaseAuth.getInstance()
+        toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+
+        drawerLayout = findViewById(R.id.drawer_layout)
+        navView = findViewById(R.id.nav_view)
+        var db =FirebaseFirestore.getInstance()
+        val email = intent.getStringExtra("email")
+        val docRef = db.collection("User").document(email.toString())
+        docRef.get()
+            .addOnSuccessListener { document ->
+                if (document != null) {
+                    val name =document.getString("name")
+                    val nv=navView.getHeaderView(0)
+                    val textView = nv.findViewById<TextView>(R.id.titlemain)
+                    textView.setText(name).toString()
+                    val textView1 = nv.findViewById<TextView>(R.id.titlesub)
+                    textView1.setText(email).toString()
+
+                } else {
+
+                }
+            }
+            .addOnFailureListener { exception ->
+
+
+
+            }
+
+        val toggle = ActionBarDrawerToggle(
+            this, drawerLayout, toolbar, 0, 0
+        )
+        drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+        navView.setNavigationItemSelectedListener(this)
+
+
+
+
+
     }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+
+        when (item.itemId) {
+            R.id.nav_map -> {
+                Toast.makeText(this, "map", Toast.LENGTH_SHORT).show()
+            }
+            R.id.nav_invite -> {
+
+
+                //////////////////////////
+                Toast.makeText(this, "Messages invite", Toast.LENGTH_SHORT).show()
+            }
+            R.id.nav_myreport -> {
+                Toast.makeText(this, "Update clicked", Toast.LENGTH_SHORT).show()
+            }
+            R.id.nav_about -> {
+                Toast.makeText(this, "Friends about", Toast.LENGTH_SHORT).show()
+            }
+
+            R.id.nav_logout -> {
+                auth.signOut()
+                startActivity(Intent(this,MainActivity::class.java))
+            }
+
+            R.id.titlemain ->
+            {
+
+            }
+        }
+        drawerLayout.closeDrawer(GravityCompat.START)
+        return true
+    }
+    ////////////////////back press acitvity/////////////////////////
     private var doubleBackToExitPressedOnce = false
     override fun onBackPressed() {
         if (doubleBackToExitPressedOnce) {
             super.onBackPressed()
             auth.signOut()
+            startActivity(Intent(this,MainActivity::class.java))
+            finish()
             return
         }
 
@@ -30,4 +119,6 @@ class DashBoard_user : AppCompatActivity()
 
         Handler().postDelayed(Runnable { doubleBackToExitPressedOnce = false }, 2000)
     }
+
+
 }
