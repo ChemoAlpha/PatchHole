@@ -1,15 +1,19 @@
 package com.example.patchhole
 
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import android.util.Patterns
 import android.widget.Toast
+import androidx.core.content.PermissionChecker
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.jar.Manifest
 
 class MainActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
@@ -24,17 +28,13 @@ class MainActivity : AppCompatActivity() {
 
 
         }
-        sign.setOnClickListener()
-        {
-            doSign()
+        sign.setOnClickListener{
+            startActivity(Intent(this,Register_user::class.java))
         }
 
     }
 
-    fun doSign()
-    {
-        startActivity(Intent(this,Register_user::class.java))
-    }
+
     fun doLogin()
     {
         if(Email.text.toString().isEmpty())

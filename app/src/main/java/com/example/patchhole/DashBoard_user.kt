@@ -10,9 +10,11 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.app_bar_main.*
 import android.widget.TextView as TextView
 
 
@@ -20,6 +22,11 @@ class DashBoard_user : AppCompatActivity(), NavigationView.OnNavigationItemSelec
 
 {
 
+    lateinit var dashboardhome :HomeFragment
+    lateinit var mapFragment: MapFragment
+    lateinit var  invite_Fragment: inviteFragment
+    lateinit var myreport_Fragment: myreportFragment
+    lateinit var about_Fragment: aboutFragment
     lateinit var toolbar: Toolbar
     lateinit var drawerLayout: DrawerLayout
     lateinit var navView: NavigationView
@@ -30,7 +37,7 @@ class DashBoard_user : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         setContentView(R.layout.activity_dash_board)
 
         auth = FirebaseAuth.getInstance()
-        toolbar = findViewById(R.id.toolbar)
+        toolbar = findViewById(R.id.toolBar)
         setSupportActionBar(toolbar)
 
         drawerLayout = findViewById(R.id.drawer_layout)
@@ -64,7 +71,12 @@ class DashBoard_user : AppCompatActivity(), NavigationView.OnNavigationItemSelec
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
         navView.setNavigationItemSelectedListener(this)
-
+        dashboardhome = HomeFragment()
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.frame_layout,dashboardhome)
+            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+            .commit()
 
 
 
@@ -74,20 +86,46 @@ class DashBoard_user : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
 
         when (item.itemId) {
+            R.id.home -> {
+                dashboardhome = HomeFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.frame_layout,dashboardhome)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
+            }
             R.id.nav_map -> {
-                Toast.makeText(this, "map", Toast.LENGTH_SHORT).show()
+                mapFragment = MapFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.frame_layout,mapFragment)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
             }
             R.id.nav_invite -> {
 
-
-                //////////////////////////
-                Toast.makeText(this, "Messages invite", Toast.LENGTH_SHORT).show()
+                invite_Fragment = inviteFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.frame_layout,invite_Fragment)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
             }
             R.id.nav_myreport -> {
-                Toast.makeText(this, "Update clicked", Toast.LENGTH_SHORT).show()
+                myreport_Fragment = myreportFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.frame_layout,myreport_Fragment)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
             }
             R.id.nav_about -> {
-                Toast.makeText(this, "Friends about", Toast.LENGTH_SHORT).show()
+                about_Fragment =aboutFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.frame_layout,about_Fragment)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
             }
 
             R.id.nav_logout -> {

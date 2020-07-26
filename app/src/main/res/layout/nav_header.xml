@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="200dp"
-    android:background="#4CAF50"
+    android:background="@drawable/navhead"
     android:orientation="vertical"
     android:gravity="bottom"
     android:paddingLeft="15dp"
@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Title"
-        android:textColor="#FFFFFF"
+        android:textColor="#000"
         android:textStyle="bold"/>
 
     <TextView
@@ -30,6 +30,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="This is our navigation drawer"
-        android:textColor="#FFFFFF"/>
+        android:textColor="#000000"/>
 
 </LinearLayout>
