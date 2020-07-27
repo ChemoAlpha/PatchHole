@@ -23,7 +23,7 @@ class DashBoard_user : AppCompatActivity(), NavigationView.OnNavigationItemSelec
 {
 
     lateinit var dashboardhome :HomeFragment
-    lateinit var mapFragment: MapFragment
+    lateinit var mapsFragment: MapsFragment
     lateinit var  invite_Fragment: inviteFragment
     lateinit var myreport_Fragment: myreportFragment
     lateinit var about_Fragment: aboutFragment
@@ -95,10 +95,10 @@ class DashBoard_user : AppCompatActivity(), NavigationView.OnNavigationItemSelec
                     .commit()
             }
             R.id.nav_map -> {
-                mapFragment = MapFragment()
+                mapsFragment = MapsFragment()
                 supportFragmentManager
                     .beginTransaction()
-                    .replace(R.id.frame_layout,mapFragment)
+                    .replace(R.id.frame_layout,mapsFragment)
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                     .commit()
             }
