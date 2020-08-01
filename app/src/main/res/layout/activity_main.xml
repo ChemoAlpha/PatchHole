@@ -28,7 +28,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:text="Here will our moto"
-            android:textColor="#2CA7E0"
+            android:textColor="#20A4"
             android:textSize="25dp"
             android:textStyle="bold" />
 

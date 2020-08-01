@@ -42,8 +42,7 @@
         <activity
             android:name=".DashBoard_user"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MainActivity">
-        </activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
