@@ -13,6 +13,7 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 
 class MapsFragment : Fragment() {
@@ -27,15 +28,30 @@ class MapsFragment : Fragment() {
          * install it inside the SupportMapFragment. This method will only be triggered once the
          * user has installed Google Play services and returned to the app.
          */
+
         val goa = LatLng(15.496777, 73.827827)
-        googleMap.addMarker(MarkerOptions().position(goa).icon(BitmapDescriptorFactory.defaultMarker(
-            BitmapDescriptorFactory.HUE_GREEN)).title("You are in goa"))
+        /*googleMap.addMarker(MarkerOptions().position(goa).icon(BitmapDescriptorFactory.defaultMarker(
+            BitmapDescriptorFactory.HUE_GREEN)).title("You are in goa"))*/
         //googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(goa,12F),5000,null)
 
+        // Adding marker
+        fun addCustomMarker(lt:Double,ln:Double) {
+            val customMarker = LatLng(lt,ln)
+            googleMap.addMarker(MarkerOptions().position(customMarker).icon(BitmapDescriptorFactory.defaultMarker(
+                BitmapDescriptorFactory.HUE_RED)).title("PotHole to be fixed"))
+
+        }
+
+        // Removing marker
+        fun removeCustomMarker(m:Marker){
+            m.remove()
+        }
 
 
     }
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
