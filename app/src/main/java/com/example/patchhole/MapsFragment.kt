@@ -11,6 +11,7 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
@@ -26,9 +27,14 @@ class MapsFragment : Fragment() {
          * install it inside the SupportMapFragment. This method will only be triggered once the
          * user has installed Google Play services and returned to the app.
          */
-        val sydney = LatLng(-34.0, 151.0)
-        googleMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        val goa = LatLng(15.496777, 73.827827)
+        googleMap.addMarker(MarkerOptions().position(goa).icon(BitmapDescriptorFactory.defaultMarker(
+            BitmapDescriptorFactory.HUE_GREEN)).title("You are in goa"))
+        //googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(goa,12F),5000,null)
+
+
+
     }
 
     override fun onCreateView(

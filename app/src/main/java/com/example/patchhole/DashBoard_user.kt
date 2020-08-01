@@ -27,6 +27,8 @@ class DashBoard_user : AppCompatActivity(), NavigationView.OnNavigationItemSelec
     lateinit var  invite_Fragment: inviteFragment
     lateinit var myreport_Fragment: myreportFragment
     lateinit var about_Fragment: aboutFragment
+    //lateinit var admin_panel_fragment: adminPanelFragment
+
     lateinit var toolbar: Toolbar
     lateinit var drawerLayout: DrawerLayout
     lateinit var navView: NavigationView
@@ -126,6 +128,18 @@ class DashBoard_user : AppCompatActivity(), NavigationView.OnNavigationItemSelec
                     .replace(R.id.frame_layout,about_Fragment)
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                     .commit()
+            }
+            R.id.admin_panel -> {
+                /*admin_panel_fragment =adminPanelFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.frame_layout,admin_panel_fragment)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
+                */
+                val intent = Intent(baseContext,adminPanel::class.java)
+                startActivity(intent)
+
             }
 
             R.id.nav_logout -> {
