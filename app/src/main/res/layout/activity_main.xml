@@ -44,7 +44,7 @@
             android:hint="username"
             android:inputType="textEmailAddress"
             android:padding="20dp"
-            android:textColorHint="#2CA7E0" />
+            android:textColorHint="#20A496" />
 
         <EditText
             android:id="@+id/Password"
