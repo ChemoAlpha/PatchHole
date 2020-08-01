@@ -22,6 +22,9 @@
             android:id="@+id/nav_about"
             android:icon="@drawable/ic_friends"
             android:title="About"/>
+        <item android:id="@+id/admin_panel"
+            android:icon="@drawable/ic_map"
+            android:title="Admin Panel" />
     </group>
 
 
