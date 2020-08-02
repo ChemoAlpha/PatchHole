@@ -65,6 +65,7 @@
         android:backgroundTint="@color/cardview_dark_background"
         android:ems="10"
         android:hint="enter email"
+        android:textColor="#E8EAF6"
         android:textColorHint="#9AE8EAF6"
         android:textSize="14sp" />
 
@@ -86,6 +87,7 @@
         android:ems="10"
         android:hint="password"
         android:inputType="textPassword"
+        android:textColor="#E8EAF6"
         android:textColorHint="#9AE8EAF6"
         android:textSize="14sp" />
 
