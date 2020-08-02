@@ -1,68 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
 
     android:layout_height="match_parent"
+    android:background="@drawable/registration"
 
-    >
+    ><![CDATA[
 
     tools:context=".Register_user">
+
+    ]]>
 
     <TextView
         android:id="@+id/loginscrn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="80dp"
-        android:text="Registration"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        android:layout_gravity="center"/>
+        android:text="Sign Up"
+        android:textColor="@color/browser_actions_bg_grey"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
     <TextView
         android:id="@+id/fstTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="20dp"
-        android:text="Full Name"/>
+        android:text="Full Name :"
+        android:textColor="#ffffff"
+        android:textColorHighlight="#EDE7F6"
+        android:textColorHint="#EDE7F6"
+        android:textSize="18sp" />
+
     <EditText
         android:id="@+id/Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="100dp"
-        android:ems="10"/>
+        android:backgroundTint="@color/cardview_dark_background"
+        android:ems="10"
+        android:hint="enter full name"
+
+        android:textColor="#E8EAF6"
+        android:textColorHint="#9AE8EAF6"
+        android:textSize="14sp" />
+
     <TextView
         android:id="@+id/secTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Email"
-        android:layout_marginLeft="100dp" />
+        android:layout_marginLeft="100dp"
+        android:text="Email :"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
+
     <EditText
         android:id="@+id/EmailReg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="100dp"
-        android:ems="10" />
+        android:backgroundTint="@color/cardview_dark_background"
+        android:ems="10"
+        android:hint="enter email"
+        android:textColorHint="#9AE8EAF6"
+        android:textSize="14sp" />
+
     <TextView
         android:id="@+id/thirdTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Password"
-        android:layout_marginLeft="100dp" />
+        android:layout_marginLeft="100dp"
+        android:text="Password :"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
+
     <EditText
         android:id="@+id/passwordReg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="100dp"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:ems="10"
+        android:hint="password"
         android:inputType="textPassword"
-        android:ems="10" />
+        android:textColorHint="#9AE8EAF6"
+        android:textSize="14sp" />
 
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="150dp"
-        android:text="Login" />
+        android:layout_marginStart="230dp"
+        android:background="#FFEB3B"
+        android:shadowRadius="30"
+        android:text="Join Us!" />
 
     <TextView
         android:id="@+id/lnkLogin"
@@ -71,9 +106,9 @@
         android:layout_marginTop="40dp"
         android:gravity="center"
         android:onClick="test"
-        android:text="Already Registered? Login here"
-        android:textColor="#3F51B5"
-        android:textSize="20dp" />
+        android:text="Already Joined Us? Login!"
+        android:textColor="#E8EAF6"
+        android:textSize="20sp" />
 
     <ProgressBar
         android:id="@+id/progressBar"
