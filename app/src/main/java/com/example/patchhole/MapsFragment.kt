@@ -30,8 +30,26 @@ class MapsFragment : Fragment() {
          */
 
         val goa = LatLng(15.496777, 73.827827)
-        /*googleMap.addMarker(MarkerOptions().position(goa).icon(BitmapDescriptorFactory.defaultMarker(
-            BitmapDescriptorFactory.HUE_GREEN)).title("You are in goa"))*/
+
+        // Markers
+        googleMap.addMarker(MarkerOptions().position(goa).icon(BitmapDescriptorFactory.defaultMarker(
+            BitmapDescriptorFactory.HUE_GREEN)).title("Pothole is Fixed!!"))
+        googleMap.addMarker(MarkerOptions().position(LatLng(15.496650, 73.827800)).icon(BitmapDescriptorFactory.defaultMarker(
+            BitmapDescriptorFactory.HUE_RED)).title("PotHole to be fixed"))
+        googleMap.addMarker(MarkerOptions().position(LatLng(15.506750, 73.837750)).icon(BitmapDescriptorFactory.defaultMarker(
+            BitmapDescriptorFactory.HUE_GREEN)).title("Pothole is Fixed!!"))
+        googleMap.addMarker(MarkerOptions().position(LatLng(15.516730, 73.867700)).icon(BitmapDescriptorFactory.defaultMarker(
+            BitmapDescriptorFactory.HUE_RED)).title("PotHole to be fixed"))
+        googleMap.addMarker(MarkerOptions().position(LatLng(15.526690, 73.957650)).icon(BitmapDescriptorFactory.defaultMarker(
+            BitmapDescriptorFactory.HUE_GREEN)).title("Pothole is Fixed!!"))
+        googleMap.addMarker(MarkerOptions().position(LatLng(15.536670, 73.987770)).icon(BitmapDescriptorFactory.defaultMarker(
+            BitmapDescriptorFactory.HUE_RED)).title("PotHole to be fixed"))
+        googleMap.addMarker(MarkerOptions().position(LatLng(15.546635, 73.927670)).icon(BitmapDescriptorFactory.defaultMarker(
+            BitmapDescriptorFactory.HUE_GREEN)).title("Pothole is Fixed!!"))
+        googleMap.addMarker(MarkerOptions().position(LatLng(15.556725, 73.887730)).icon(BitmapDescriptorFactory.defaultMarker(
+            BitmapDescriptorFactory.HUE_RED)).title("PotHole to be fixed"))
+
+
         //googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(goa,12F),5000,null)
 

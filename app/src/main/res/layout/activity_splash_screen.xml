@@ -8,8 +8,9 @@
 
     <ImageView
         android:id="@+id/patchholelogo"
-        android:layout_width="105dp"
-        android:layout_height="264dp"
+        android:layout_width="213dp"
+        android:layout_height="331dp"
+        android:contentDescription="@string/splashscreenlogo"
         android:src="@drawable/patchholelogo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
