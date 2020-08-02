@@ -12,6 +12,8 @@ import android.widget.Toast
 import androidx.core.content.PermissionChecker
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.jar.Manifest
 
@@ -87,18 +89,35 @@ class MainActivity : AppCompatActivity() {
 
    private fun updateUI(currentUser: FirebaseUser?)
     {
-    if(currentUser !=null)
-    {
-        val intent = Intent(this, DashBoard_user::class.java)
-        intent.putExtra("email",Email.text.toString())
-        startActivity(intent)
+        //var ca = FirebaseFirestore.getInstance().collection("CoAdmin").document("Email")
+        //var u = FirebaseFirestore.getInstance().collection("User").document("email")
 
-    }
+        if(currentUser !=null)
+        {
+            /*
+            if(ca.firestore.equals(currentUser)) {
+                val intent = Intent(this, DashBoard_CoAdmin::class.java)
+                intent.putExtra("email", Email.text.toString())
+                startActivity(intent)
+            }
+            else if(u.firestore.equals(currentUser))
+            {
+                val intent = Intent(this, DashBoard_user::class.java)
+                intent.putExtra("email", Email.text.toString())
+                startActivity(intent)
+            }
+            */
+
+            val intent = Intent(this, Dashboard_Admin::class.java)
+            intent.putExtra("email", Email.text.toString())
+            startActivity(intent)
+
+        }
         else
-    {
+        {
 
 
-    }
+        }
     }
     private var doubleBackToExitPressedOnce = false
     override fun onBackPressed() {

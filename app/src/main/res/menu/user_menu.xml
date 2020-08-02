@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
     <group>
         <item
             android:id="@+id/home"
@@ -14,22 +13,14 @@
             android:id="@+id/nav_myreport"
             android:icon="@drawable/ic_myreport"
             android:title="My Report"/>
-        <item android:id="@+id/admin_panel"
-            android:icon="@drawable/ic_baseline_dashboard_24"
-            android:title="Admin Panel" />
-        <item
-            android:id="@+id/nav_peopleRep"
-            android:icon="@drawable/ic_baseline_emoji_people_24"
-            android:title="People Rep." />
-        <item
-            android:id="@+id/nav_workersPanel"
-            android:icon="@drawable/ic_baseline_format_list_bulleted_24"
-            android:title="Workers Panel" />
         <item
             android:id="@+id/nav_invite"
             android:icon="@drawable/ic_invite"
             android:title="Invite a Friend"/>
-
+        <item
+            android:id="@+id/nav_peopleRep"
+            android:icon="@drawable/ic_baseline_emoji_people_24"
+            android:title="People Rep." />
         <item
             android:id="@+id/nav_about"
             android:icon="@drawable/ic_friends"
@@ -47,4 +38,5 @@
                 android:title="Sign Out"/>
         </menu>
     </item>
+
 </menu>
