@@ -13,7 +13,7 @@
         <item
             android:id="@+id/nav_myreport"
             android:icon="@drawable/ic_myreport"
-            android:title="My Report"/>
+            android:title="Reports"/>
         <item android:id="@+id/admin_panel"
             android:icon="@drawable/ic_baseline_dashboard_24"
             android:title="Admin Panel" />
@@ -25,6 +25,11 @@
             android:id="@+id/nav_workersPanel"
             android:icon="@drawable/ic_baseline_format_list_bulleted_24"
             android:title="Workers Panel" />
+        <item
+            android:id="@+id/nav_dbOperations"
+            android:icon="@drawable/ic_baseline_date_range_24"
+            android:title="DB Operations"
+            />
         <item
             android:id="@+id/nav_invite"
             android:icon="@drawable/ic_invite"

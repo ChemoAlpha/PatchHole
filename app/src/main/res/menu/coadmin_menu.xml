@@ -12,7 +12,7 @@
         <item
             android:id="@+id/nav_myreport"
             android:icon="@drawable/ic_myreport"
-            android:title="My Report"/>
+            android:title="Reports"/>
         <item
             android:id="@+id/nav_peopleRep"
             android:icon="@drawable/ic_baseline_emoji_people_24"

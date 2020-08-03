@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    android:background="@drawable/registration"
+
+    ><![CDATA[
+
+    tools:context=".Register_peopleRep">
+
+    ]]>
+
+    <TextView
+        android:id="@+id/loginscrn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="80dp"
+        android:text="Create People Rep"
+        android:textColor="@color/browser_actions_bg_grey"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/fstTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="20dp"
+        android:text="Full Name :"
+        android:textColor="#ffffff"
+        android:textColorHighlight="#EDE7F6"
+        android:textColorHint="#EDE7F6"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:ems="10"
+        android:hint="enter full name"
+
+        android:textColor="#E8EAF6"
+        android:textColorHint="#9AE8EAF6"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/secTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:text="Email :"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/EmailReg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:ems="10"
+        android:hint="enter email"
+        android:textColor="#E8EAF6"
+        android:textColorHint="#9AE8EAF6"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/thirdTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:text="Password :"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/passwordReg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:backgroundTint="@color/cardview_dark_background"
+        android:ems="10"
+        android:hint="password"
+        android:inputType="textPassword"
+        android:textColor="#E8EAF6"
+        android:textColorHint="#9AE8EAF6"
+        android:textSize="14sp" />
+
+
+    <Button
+        android:id="@+id/btnCreate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="230dp"
+        android:background="#FFEB3B"
+        android:shadowRadius="30"
+        android:text="Join Us!" />
+
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="match_parent"
+        android:layout_marginTop="40dp"
+        android:visibility="invisible"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

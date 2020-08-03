@@ -26,6 +26,7 @@ class Dashboard_Admin : AppCompatActivity(), NavigationView.OnNavigationItemSele
     lateinit var about_Fragment: aboutFragment
     lateinit var peopleFragment: PeopleFragment
     lateinit var workersFragment: WorkersFragment
+    lateinit var dbOperationsFragment: DbOperationsFragment
     //lateinit var admin_panel_fragment: adminPanelFragment
 
     lateinit var toolbar: Toolbar
@@ -139,6 +140,16 @@ class Dashboard_Admin : AppCompatActivity(), NavigationView.OnNavigationItemSele
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                     .commit()
             }
+            R.id.nav_dbOperations -> {
+
+                dbOperationsFragment = DbOperationsFragment()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.frame_layout,dbOperationsFragment)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
+            }
+
             R.id.nav_invite -> {
 
                 invite_Fragment = inviteFragment()
