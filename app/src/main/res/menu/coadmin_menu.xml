@@ -34,14 +34,13 @@
 
     </group>
 
-
     <item android:title="Account Settings">
         <menu>
-
             <item
                 android:id="@+id/nav_logout"
                 android:icon="@drawable/ic_signout"
-                android:title="Sign Out"/>
+            android:title="Sign Out"/>
         </menu>
     </item>
+
 </menu>

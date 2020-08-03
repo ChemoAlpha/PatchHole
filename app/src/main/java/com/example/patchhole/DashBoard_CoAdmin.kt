@@ -37,8 +37,6 @@ class DashBoard_CoAdmin : AppCompatActivity(), NavigationView.OnNavigationItemSe
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dash_board__co_admin)
 
-        setContentView(R.layout.activity_dash_board)
-
         auth = FirebaseAuth.getInstance()
         toolbar = findViewById(R.id.toolBar)
         setSupportActionBar(toolbar)

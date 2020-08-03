@@ -64,6 +64,7 @@ class MainActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
 
                     val user = auth.currentUser
+
                     updateUI(user)
                 } else {
 
@@ -86,27 +87,48 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
-   private fun updateUI(currentUser: FirebaseUser?)
+    // For user
+    private fun updateUI(currentUser: FirebaseUser?)
     {
-        //var ca = FirebaseFirestore.getInstance().collection("CoAdmin").document("Email")
-        //var u = FirebaseFirestore.getInstance().collection("User").document("email")
 
         if(currentUser !=null)
         {
-            /*
-            if(ca.firestore.equals(currentUser)) {
+            val temp = Email.text.toString()
+
+            if(temp.contains("coadmin")) {
+                //Toast.makeText(applicationContext,"In coadmin",Toast.LENGTH_LONG)
+
                 val intent = Intent(this, DashBoard_CoAdmin::class.java)
                 intent.putExtra("email", Email.text.toString())
                 startActivity(intent)
             }
-            else if(u.firestore.equals(currentUser))
+            else if(temp.contains("admin"))
             {
+                val intent = Intent(this, Dashboard_Admin::class.java)
+                intent.putExtra("email", Email.text.toString())
+                startActivity(intent)
+            }
+            else{
                 val intent = Intent(this, DashBoard_user::class.java)
                 intent.putExtra("email", Email.text.toString())
                 startActivity(intent)
             }
-            */
+        }
+        else
+        {
+
+
+        }
+    }
+
+    // For admin
+    /*
+    private fun updateUIadmin(currentUser: FirebaseUser?)
+    {
+        //var ca = FirebaseFirestore.getInstance().collection("CoAdmin").document("Email")
+        //var u = FirebaseFirestore.getInstance().collection("User").document("email")
+        if(currentUser !=null)
+        {
 
             val intent = Intent(this, Dashboard_Admin::class.java)
             intent.putExtra("email", Email.text.toString())
@@ -119,6 +141,27 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+
+    // For coadmin
+    private fun updateUIcoadmin(currentUser: FirebaseUser?)
+    {
+        //var ca = FirebaseFirestore.getInstance().collection("CoAdmin").document("Email")
+        //var u = FirebaseFirestore.getInstance().collection("User").document("email")
+        if(currentUser !=null)
+        {
+
+            val intent = Intent(this, DashBoard_CoAdmin::class.java)
+            intent.putExtra("email", Email.text.toString())
+            startActivity(intent)
+
+        }
+        else
+        {
+
+
+        }
+    }
+    */
     private var doubleBackToExitPressedOnce = false
     override fun onBackPressed() {
         if (doubleBackToExitPressedOnce) {

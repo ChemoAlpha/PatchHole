@@ -51,7 +51,7 @@ class MapsFragment : Fragment() {
 
 
         //googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
-        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(goa,12F),5000,null)
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(goa,10F),5000,null)
 
         // Adding marker
         fun addCustomMarker(lt:Double,ln:Double) {
