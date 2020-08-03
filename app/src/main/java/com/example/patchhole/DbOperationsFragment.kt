@@ -30,6 +30,11 @@ class DbOperationsFragment : Fragment() {
             val intent = Intent(context,Register_peopleRep::class.java)
             startActivity(intent)
         }
+
+        btnCoadmin.setOnClickListener{
+            val intent = Intent(context,Register_coadmin::class.java)
+            startActivity(intent)
+        }
     }
 
 }
